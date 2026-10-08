@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissões de rede -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <!-- Permissões de serviço em foreground -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+    <!-- Wake lock para manter a transmissão ativa -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Notificações (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Vibração para feedback -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".FaithDeskApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="FaithDesk Mobile"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FaithDesk"
+        android:usesCleartextTraffic="false">
+
+        <!-- Tela principal -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Tela de sessão ativa -->
+        <activity
+            android:name=".ui.SessionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Tela do controlador (conectar em outro dispositivo) -->
+        <activity
+            android:name=".ui.ControllerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Serviço de captura de tela (MediaProjection) -->
+        <service
+            android:name=".service.ScreenCaptureService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection"
+            android:permission="android.permission.FOREGROUND_SERVICE" />
+
+        <!-- AccessibilityService para controle remoto -->
+        <service
+            android:name=".service.RemoteControlService"
+            android:exported="true"
+            android:label="FaithDesk — Controle Remoto"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+</manifest>

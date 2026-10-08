@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FaithDesk Mobile</string>
+    <string name="accessibility_description">
+        O FaithDesk usa este serviço para executar toques e gestos no dispositivo
+        durante uma sessão de acesso remoto autorizada pelo proprietário.
+        NÃO captura texto, senhas ou dados pessoais.
+    </string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Configuração do AccessibilityService para controle remoto.
+    
+    IMPORTANTE: Este serviço é usado APENAS para injetar gestos de controle remoto
+    quando uma sessão autorizada pelo usuário está ativa.
+    
+    NÃO capturamos texto digitado, senhas, dados pessoais nem qualquer outra
+    informação do acessibilidade — apenas executamos ações de toque.
+-->
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeNone"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/accessibility_description"
+    android:notificationTimeout="0"
+    android:settingsActivity="com.faithdesk.mobile.ui.MainActivity" />

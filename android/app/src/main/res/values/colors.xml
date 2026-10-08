@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta FaithDesk: escuro profissional + acento azul -->
+    <color name="bg_primary">#0F1117</color>
+    <color name="bg_secondary">#1A1D27</color>
+    <color name="card_bg">#1E2130</color>
+    <color name="accent">#3B82F6</color>       <!-- Azul -->
+    <color name="accent_light">#60A5FA</color>
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="danger">#EF4444</color>       <!-- Vermelho sessão ativa -->
+    <color name="warning">#F59E0B</color>
+    <color name="success">#22C55E</color>
+
+    <!-- Material Theme -->
+    <color name="md_theme_primary">#3B82F6</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_background">#0F1117</color>
+    <color name="md_theme_surface">#1E2130</color>
+    <color name="md_theme_onSurface">#F1F5F9</color>
+    <color name="md_theme_outline">#334155</color>
+</resources>
